@@ -144,6 +144,19 @@ export const BLOG_POSTS = [
     content: `The Kenya National Bureau of Statistics (KNBS) released the Q3 2025 Construction Input Price Index (CIPI) in October 2025, revealing a 1.27% overall quarterly increase to an index of 121.27 (base Q4 2019 = 100).\n\n## Key Movements\n\n**Steel & Reinforcement Bars** recorded the biggest jump at +5.20% quarter-on-quarter, reaching an index of 175.08. This surge is largely driven by global steel market tightening and higher import costs.\n\n**Cement** bucked the trend, falling 1.39% to 118.79 after a period of elevated prices.\n\n**Sand** rose 3.63% while **ballast** gained 1.41%, reflecting continued pressure from transport costs.\n\n**Timber** fell 2.71%, offering some relief for carpentry and formwork budgets.\n\n## Implications for Contractors\n\nContractors pricing tenders for projects extending beyond six months should apply a price fluctuation clause tied to the CIPI to manage exposure to steel and bitumen price movements.`,
     tags: ["CIPI", "Material Prices", "KNBS", "Tender Pricing"],
   },
+  {
+    slug: "one-health-biosafety-framework",
+    title: "One Health Biosafety Framework for Estates and Roads",
+    date: "2025-03-25",
+    author: "Edwin Macharia",
+    category: "Public Health & Infrastructure",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+    icon: "Shield",
+    excerpt: "A practical biosafety framework for reducing disease risks in housing estates and road projects through pathogen reduction, separation principles, and cross‑species transmission prevention.",
+    content: `This framework gives practical steps to reduce disease risks in housing estates and road projects by focusing on biosafety, pathogen reduction, and cross‑species transmission.\n\n## 1. Map Disease‑Prone Spots\n\n- In estates and apartments, mark: shared staircases, bin areas, playgrounds, pet zones, laundry spaces, ground‑floor shops.\n- Along marram and tarmac roads, mark: low points where runoff collects, bus stops, roadside markets, animal crossing points.\n- Treat these as potential *pathogen hotspots* where people, animals, dust and waste can mix.\n\n## 2. Design for Clean and Dirty Separation\n\n**In houses and estates:**\n- Keep refuse bays, pet areas and septic tanks away from children's play areas and food kiosks.\n- Ensure dirty water from balconies, bathrooms and animal pens does not drain into common walkways.\n\n**Along roads:**\n- Separate pedestrian paths and food stalls from open drains and vehicle splash zones.\n\nClear separation reduces faecal and dust‑borne bacteria reaching people and food.\n\n## 3. Control Dust and Runoff\n\n**On marram roads:**\n- Provide side drains and simple erosion control so stormwater does not form stagnant pools carrying road dust, faeces and animal waste into homes or shops.\n\n**On tarmac:**\n- Manage runoff so it enters lined drains, not bare soil paths or market spaces.\n\nThis limits spread of bacteria and other pathogens attached to dust and sediments.\n\n## 4. Enable Everyday Hygiene and Safe Behaviour\n\n- Place hand‑wash points at estate gates, near bin areas, roadside markets and small butcheries.\n- Provide simple rules for residents and vendors: pick up pet waste, keep animals out of roadside drains, cover food from dust.\n\n## Conclusion\n\nUsed together, these steps form a *One Health biosafety framework* that helps estates and roads stay cleaner, safer, and more resistant to disease spread in both normal times and epidemics.`,
+    tags: ["One Health", "Biosafety", "Public Health", "Infrastructure Design", "Disease Prevention"],
+  },
 ];
 
 // ── White Papers / Knowledge ──────────────────────────────────────────────────
@@ -180,7 +193,6 @@ export const SHOP_PRODUCTS = {
   ],
 };
 
-// ── Seminars ──────────────────────────────────────────────────────────────────
 // ── Seminars ──────────────────────────────────────────────────────────────────
 export const SEMINARS = [
   { 
@@ -313,7 +325,6 @@ export const SEMINARS = [
   },
 ];
 
-// ── Project showcases ─────────────────────────────────────────────────────────
 // ── Project showcases ─────────────────────────────────────────────────────────
 export const PROJECTS = [
   {

@@ -105,19 +105,7 @@ export const BLOG_POSTS = [
     content: `County road networks across Kenya carry the bulk of agricultural and community traffic yet receive a fraction of national road funding. This article examines two successful rehabilitation projects in Kilifi and Machakos counties that delivered durable surfaces at significantly below-benchmark costs.\n\n## Kilifi County Case Study\n\nThe 14 km Mariakani–Kayafungo road was rehabilitated using in-place cold recycling, reusing 85% of the existing asphalt material. This approach reduced haulage costs by 60% compared to full reconstruction and cut the carbon footprint of the project substantially.\n\n## Machakos County Case Study\n\nA micro-surfacing treatment was applied to 22 km of the Kathiani network, extending pavement life by an estimated 8–10 years at a cost of KSh 3.2M/km versus KSh 18M/km for full reconstruction.\n\n## Key Takeaways\n\n**Condition assessment is critical**: A thorough deflection survey (Benkelman beam or FWD) before selecting treatment avoids over-designing and wasting limited budgets.\n\n**Local materials**: Using locally sourced aggregates and bitumen emulsion reduces costs and supports county supply chains.\n\n**Maintenance window**: Treatments applied at the right point in the pavement deterioration curve deliver 3–5× better value than emergency reconstruction.`,
     tags: ["Roads", "County Engineering", "Rehabilitation", "Cost Management"],
   },
-  {
-    slug: "mombasa-water-supply",
-    title: "Mombasa Water Supply: Stormwater & Drainage Retrofits",
-    date: "2025-03-28",
-    author: "Rachel Wanjiru",
-    category: "Water & Sanitation",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1534430480872-3498386e7856?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    icon: "Droplets",
-    excerpt: "Stormwater management and drainage retrofit strategies for Mombasa's coastal urban environment, addressing flooding and water quality challenges.",
-    content: `Mombasa's low-lying coastal topography and rapid urbanisation combine to create persistent flooding challenges, particularly in Kisauni, Likoni and Changamwe sub-counties. This project update covers the drainage retrofit scheme delivered by Strasan Group Limited for Mombasa County Government.\n\n## The Challenge\n\nExisting drainage channels were undersized, partially blocked and discharged untreated stormwater directly into the ocean, contributing to degradation of reef ecosystems. Peak flows during the long rains season exceeded channel capacity by 300%.\n\n## Our Approach\n\nThe retrofit combined upsizing of primary trunk drains with a network of bioretention swales in residential areas to attenuate peak flows before they reached the main system. Trash screens and gross pollutant traps were installed at 14 outfall points.\n\n## Results\n\n**Flood frequency reduced** from 4–5 events per rainy season to 0–1 for the 10-year return period storm.\n\n**Water quality improvement**: Total suspended solids at outfalls reduced by 72% based on post-construction monitoring.\n\nThe project was delivered in 11 months at KSh 340M, within budget and 3 weeks ahead of programme.`,
-    tags: ["Water", "Drainage", "Mombasa", "SUDS", "Coastal Engineering"],
-  },
+  
   {
     slug: "site-safety-culture",
     title: "Building a Site Safety Culture: NCA Regulations & Practical Training",

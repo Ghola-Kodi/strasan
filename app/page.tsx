@@ -62,7 +62,7 @@ export default function HomePage() {
                 Civil Engineering Consultancy · 30+ years combined experience.
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                engineering &amp; consultancy{' '}
+                civil engineering &amp; consultancy{' '}
                 <span className="text-gold-400 italic">Kenya</span>
               </h1>
               <p className="text-forest-200 text-lg leading-relaxed mb-8 max-w-lg">

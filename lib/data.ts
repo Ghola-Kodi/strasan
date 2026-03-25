@@ -185,35 +185,131 @@ export const SHOP_PRODUCTS = {
 export const SEMINARS = [
   { 
     id: "steel-design",  
+    slug: "steel-design",
     title: "Steel Design",              
     desc: "Online · 16–18 June 2025 (3 half-days)",       
     badge: "early bird KSh 12,500", 
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    date: "2025-06-16"
+    date: "2025-06-16",
+    duration: "3 half-days",
+    format: "Online",
+    price: "KSh 12,500",
+    earlyBird: "KSh 12,500",
+    level: "Intermediate",
+    description: "Comprehensive training on structural steel design principles, connection detailing, and analysis methods following international standards. This seminar covers both theoretical concepts and practical applications for modern steel structures.",
+    objectives: [
+      "Understand steel material properties and behavior",
+      "Master connection design and detailing",
+      "Learn advanced analysis techniques",
+      "Apply international design codes (EC3, AISC)",
+      "Develop practical design workflows"
+    ],
+    agenda: [
+      { day: "Day 1", topics: ["Introduction to Steel Design", "Material Properties", "Section Classification", "Tension Members"] },
+      { day: "Day 2", topics: ["Compression Members", "Flexural Members", "Lateral-Torsional Buckling", "Combined Actions"] },
+      { day: "Day 3", topics: ["Connection Design", "Bolted & Welded Connections", "Practical Design Examples", "Workshop Session"] }
+    ],
+    targetAudience: "Civil and structural engineers, consulting engineers, project managers, and graduate engineers seeking specialized knowledge in steel design.",
+    prerequisites: "Basic understanding of structural analysis and mechanics of materials.",
+    instructor: "Eng. Paul Methu",
+    instructorBio: "Eng. Paul Methu is a practicing Consulting Engineer with over 32 years of experience in structural and civil engineering across East Africa. He has led design teams for numerous steel structures including industrial buildings, bridges, and high-rise developments."
   },
   { 
     id: "geotech-ws",    
+    slug: "geotechnical-workshop",
     title: "Geotechnical Workshop",     
     desc: "Westlands, Nairobi (in-person)",               
     badge: "KSh 18,500",            
     image: "https://images.unsplash.com/photo-1581082583537-20d51b4b4f1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    date: "2025-07-10"
+    date: "2025-07-10",
+    duration: "2 days",
+    format: "In-person",
+    price: "KSh 18,500",
+    earlyBird: "KSh 15,500",
+    level: "Intermediate",
+    location: "Westlands, Nairobi",
+    description: "Hands-on workshop covering site investigation techniques, soil testing methodologies, and foundation design for Kenyan geological conditions. Participants will learn practical approaches to geotechnical challenges.",
+    objectives: [
+      "Master site investigation planning",
+      "Learn soil testing methodologies",
+      "Understand foundation design principles",
+      "Analyze slope stability and retaining walls",
+      "Interpret geotechnical reports effectively"
+    ],
+    agenda: [
+      { day: "Day 1", topics: ["Site Investigation Methods", "Soil Sampling Techniques", "Laboratory Testing", "Field Testing (CPT, SPT)"] },
+      { day: "Day 2", topics: ["Foundation Design", "Shallow & Deep Foundations", "Slope Stability", "Case Studies & Workshop"] }
+    ],
+    targetAudience: "Geotechnical engineers, civil engineers, site supervisors, and project managers involved in foundation design and construction.",
+    prerequisites: "Basic knowledge of soil mechanics and foundation engineering.",
+    instructor: "Eng. Dr. Paul Gacheru Macharia",
+    instructorBio: "Eng. Dr. Paul Macharia holds a Ph.D. in Civil Engineering and has extensive experience in geotechnical engineering across East Africa. He is a consulting engineer with EBK and a lecturer at the University of Nairobi."
   },
   { 
     id: "bim-kenya",     
+    slug: "bim-for-kenyan-projects",
     title: "BIM for Kenyan Projects",   
     desc: "On-demand seminar (recorded)",                 
     badge: "KSh 5,900",             
     image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    date: "2025-05-01"
+    date: "2025-05-01",
+    duration: "Self-paced",
+    format: "On-demand",
+    price: "KSh 5,900",
+    earlyBird: null,
+    level: "Beginner to Intermediate",
+    description: "Introduction to Building Information Modeling (BIM) principles and implementation strategies tailored for the Kenyan construction industry. Learn how BIM can improve collaboration, reduce errors, and enhance project outcomes.",
+    objectives: [
+      "Understand BIM fundamentals and terminology",
+      "Learn BIM implementation strategies",
+      "Explore common BIM software platforms",
+      "Develop collaboration workflows",
+      "Understand Kenyan BIM standards and requirements"
+    ],
+    agenda: [
+      { day: "Module 1", topics: ["Introduction to BIM", "BIM Dimensions", "Industry Standards", "Kenyan Context"] },
+      { day: "Module 2", topics: ["BIM Software Overview", "Revit Fundamentals", "Model Coordination", "Clash Detection"] },
+      { day: "Module 3", topics: ["BIM for Construction", "4D & 5D BIM", "Facility Management", "Implementation Strategy"] }
+    ],
+    targetAudience: "Architects, engineers, contractors, and construction professionals interested in adopting BIM methodologies.",
+    prerequisites: "Basic computer literacy and familiarity with construction processes.",
+    instructor: "Eng. Gerald Kamau",
+    instructorBio: "Eng. Gerald Kamau is a professional engineer with extensive experience in infrastructure engineering and BIM implementation across East Africa."
   },
   { 
     id: "site-mgmt",     
+    slug: "site-management",
     title: "Site Management",           
     desc: "Evening course · 5 weeks · Sept start",       
     badge: "KSh 27,000",            
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    date: "2025-09-01"
+    date: "2025-09-01",
+    duration: "5 weeks",
+    format: "Evening Course",
+    price: "KSh 27,000",
+    earlyBird: "KSh 24,000",
+    level: "Intermediate",
+    schedule: "Tuesdays & Thursdays, 6:00 PM - 8:00 PM",
+    description: "Comprehensive 5-week evening course covering all aspects of construction site management, from planning and scheduling to quality control and safety compliance. Ideal for site engineers and project supervisors.",
+    objectives: [
+      "Develop effective site management strategies",
+      "Master project planning and scheduling",
+      "Implement quality control systems",
+      "Manage site safety and compliance",
+      "Optimize resource allocation",
+      "Lead construction teams effectively"
+    ],
+    agenda: [
+      { week: "Week 1", topics: ["Site Setup & Organization", "Health & Safety Regulations", "Site Documentation", "Stakeholder Management"] },
+      { week: "Week 2", topics: ["Project Planning", "Scheduling Techniques", "Resource Management", "Critical Path Method"] },
+      { week: "Week 3", topics: ["Quality Control Systems", "Material Management", "Equipment Selection", "Subcontractor Management"] },
+      { week: "Week 4", topics: ["Cost Control", "Progress Monitoring", "Change Management", "Claims and Variations"] },
+      { week: "Week 5", topics: ["Safety Audits", "Environmental Compliance", "Project Handover", "Case Studies & Workshop"] }
+    ],
+    targetAudience: "Site engineers, project supervisors, construction managers, and contractors seeking to enhance site management skills.",
+    prerequisites: "Experience in construction operations and basic understanding of project management principles.",
+    instructor: "Eng. Paul Methu",
+    instructorBio: "Eng. Paul Methu brings 32+ years of experience in civil engineering and project management across East Africa, with expertise in site supervision and contract management."
   },
 ];
 

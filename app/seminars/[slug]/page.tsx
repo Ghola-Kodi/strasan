@@ -122,7 +122,7 @@ export default async function SeminarPage({ params }: { params: Promise<{ slug: 
                 </ul>
               </div>
               
-              {/* Agenda */}
+              {/* Agenda - FIXED: handle both 'day' and 'week' properties */}
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                   <BookOpen className="w-6 h-6 text-primary" />
@@ -130,7 +130,8 @@ export default async function SeminarPage({ params }: { params: Promise<{ slug: 
                 </h2>
                 <div className="space-y-4">
                   {seminar.agenda.map((item, idx) => {
-                    const dayLabel = item.day || item.week;
+                    // Safely get the label - works for both 'day' and 'week' properties
+                    const dayLabel = 'day' in item ? item.day : ('week' in item ? item.week : '');
                     return (
                       <div key={idx} className="border-l-4 border-primary pl-4">
                         <h3 className="font-semibold text-lg mb-2">{dayLabel}</h3>

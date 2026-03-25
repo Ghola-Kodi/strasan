@@ -181,11 +181,40 @@ export const SHOP_PRODUCTS = {
 };
 
 // ── Seminars ──────────────────────────────────────────────────────────────────
+// ── Seminars ──────────────────────────────────────────────────────────────────
 export const SEMINARS = [
-  { id: "steel-design",  title: "Steel design",              desc: "Online · 16–18 June 2025 (3 half-days)",       badge: "early bird KSh 12,500", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { id: "geotech-ws",    title: "Geotechnical workshop",     desc: "Westlands, Nairobi (in-person)",               badge: "KSh 18,500",            image: "https://images.unsplash.com/photo-1581082583537-20d51b4b4f1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { id: "bim-kenya",     title: "BIM for Kenyan projects",   desc: "On-demand seminar (recorded)",                 badge: "KSh 5,900",             image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { id: "site-mgmt",     title: "Site management",           desc: "Evening course · 5 weeks · Sept start",       badge: "KSh 27,000",            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { 
+    id: "steel-design",  
+    title: "Steel Design",              
+    desc: "Online · 16–18 June 2025 (3 half-days)",       
+    badge: "early bird KSh 12,500", 
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    date: "2025-06-16"
+  },
+  { 
+    id: "geotech-ws",    
+    title: "Geotechnical Workshop",     
+    desc: "Westlands, Nairobi (in-person)",               
+    badge: "KSh 18,500",            
+    image: "https://images.unsplash.com/photo-1581082583537-20d51b4b4f1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    date: "2025-07-10"
+  },
+  { 
+    id: "bim-kenya",     
+    title: "BIM for Kenyan Projects",   
+    desc: "On-demand seminar (recorded)",                 
+    badge: "KSh 5,900",             
+    image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    date: "2025-05-01"
+  },
+  { 
+    id: "site-mgmt",     
+    title: "Site Management",           
+    desc: "Evening course · 5 weeks · Sept start",       
+    badge: "KSh 27,000",            
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    date: "2025-09-01"
+  },
 ];
 
 // ── Project showcases ─────────────────────────────────────────────────────────

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-forest-50:  #f4f9f7;
+  --color-forest-100: #e8f3ed;
+  --color-forest-200: #cde0d6;
+  --color-forest-300: #a3c4b0;
+  --color-forest-400: #6fa68a;
+  --color-forest-500: #4f7865;
+  --color-forest-600: #2c5b42;
+  --color-forest-700: #1e4d35;
+  --color-forest-800: #1b4d3e;
+  --color-forest-900: #17432e;
+  --color-forest-950: #0d2b1e;
+
+  --color-gold-50:  #fdf8ef;
+  --color-gold-100: #faf0da;
+  --color-gold-200: #f5dfa8;
+  --color-gold-300: #e6c882;
+  --color-gold-400: #d4a855;
+  --color-gold-500: #b88a4b;
+  --color-gold-600: #a7772e;
+  --color-gold-700: #8a5f20;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-forest-50);
+  color: var(--color-forest-900);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+.nav-link {
+  color: var(--color-forest-700);
+  font-weight: 500;
+  transition: color 0.15s;
+  text-decoration: none;
+}
+.nav-link:hover { color: var(--color-gold-600); }
+
+.btn-primary {
+  background-color: var(--color-gold-500);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.15s;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-primary:hover { background-color: var(--color-gold-600); }
+
+.btn-outline {
+  border: 2px solid var(--color-gold-500);
+  color: var(--color-forest-800);
+  background: transparent;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-outline:hover { background-color: var(--color-gold-50); }
+
+.card {
+  background: white;
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-forest-200);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }

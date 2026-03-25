@@ -193,6 +193,7 @@ export const SEMINARS = [
 export const PROJECTS = [
   {
     id: "pagak-maiwut-paloich",
+    slug: "pagak-maiwut-mathiang-paloich-road",
     title: "Pagak–Maiwut–Mathiang–Paloich Road Project",
     category: "Roads & Highways",
     location: "Upper Nile State, South Sudan",
@@ -206,6 +207,7 @@ export const PROJECTS = [
   },
   {
     id: "mangu-gardens",
+    slug: "mangu-gardens",
     title: "Mangu Gardens",
     category: "Mixed-Use Development",
     location: "Kiambu County, Kenya",
@@ -219,6 +221,7 @@ export const PROJECTS = [
   },
   {
     id: "barista-gardens",
+    slug: "barista-gardens",
     title: "Barista Gardens",
     category: "Mixed-Use Development",
     location: "Kiambu County, Kenya",
@@ -232,6 +235,7 @@ export const PROJECTS = [
   },
   {
     id: "wasili-homes",
+    slug: "wasili-homes",
     title: "Wasili Homes",
     category: "Residential Development",
     location: "Kiambu County, Kenya",
@@ -245,6 +249,7 @@ export const PROJECTS = [
   },
   {
     id: "limuru-business-park",
+    slug: "limuru-business-development-park",
     title: "Limuru Business Development Park",
     category: "Commercial Development",
     location: "Limuru, Kiambu County, Kenya",
@@ -258,6 +263,7 @@ export const PROJECTS = [
   },
   {
     id: "thika-overpass",
+    slug: "thika-road-overpass",
     title: "Thika Road Overpass",
     category: "Roads & Highways",
     location: "Thika, Kenya",
@@ -271,6 +277,7 @@ export const PROJECTS = [
   },
   {
     id: "nyando-bridge",
+    slug: "nyando-river-bridge",
     title: "Nyando River Bridge",
     category: "Structural Engineering",
     location: "Kisumu, Kenya",
@@ -282,9 +289,23 @@ export const PROJECTS = [
     image: "https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     featured: false
   },
-  
+  {
+    id: "kcb-tower",
+    slug: "kcb-tower-annex",
+    title: "KCB Tower Annex",
+    category: "High-Rise Structures",
+    location: "Nairobi CBD, Kenya",
+    value: "KSh 3.2B",
+    year: "2024",
+    client: "Kenya Commercial Bank",
+    description: "Structural design and construction supervision of a 28-storey office annex, incorporating seismic-resistant design and BIM modeling.",
+    services: ["Structural Analysis", "Seismic Design", "BIM Coordination", "Quality Assurance"],
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    featured: false
+  },
   {
     id: "mombasa-drainage",
+    slug: "mombasa-stormwater-retrofit",
     title: "Mombasa Stormwater Retrofit",
     category: "Water & Sanitation",
     location: "Mombasa, Kenya",
@@ -298,6 +319,7 @@ export const PROJECTS = [
   },
   {
     id: "kilifi-road",
+    slug: "kilifi-county-road-network",
     title: "Kilifi County Road Network",
     category: "Roads & Highways",
     location: "Kilifi County, Kenya",
@@ -311,6 +333,7 @@ export const PROJECTS = [
   },
   {
     id: "nairobi-water",
+    slug: "nairobi-water-treatment-plant",
     title: "Nairobi Water Treatment Plant",
     category: "Water & Sanitation",
     location: "Nairobi, Kenya",

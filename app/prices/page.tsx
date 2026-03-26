@@ -1,4 +1,4 @@
-import { TrendingUp, TrendingDown, Minus, Database, Info, Calculator, Building2, AlertCircle, Percent, ArrowRight } from 'lucide-react'
+import { TrendingUp, TrendingDown, Minus, Database, Info, Calculator, Building2, AlertCircle, Percent, ArrowRight, FileText, Download, ShoppingCart, FileSpreadsheet } from 'lucide-react'
 import { PRICE_MATERIALS, OVERALL_CIPI } from '@/lib/data'
 
 export const metadata = {
@@ -17,9 +17,9 @@ function TrendIcon({ trend }: { trend: string }) {
 }
 
 // Current VAT rate for construction materials (standard rate)
-const VAT_RATE = 0.16 // 16% as per Kenya Revenue Authority [citation:1]
+const VAT_RATE = 0.16 // 16% as per Kenya Revenue Authority
 
-// 2026 projected material prices with 8% annual inflation [citation:5][citation:10]
+// 2026 projected material prices with 8% annual inflation
 const MATERIALS_2026 = [
   { name: "Cement (50kg bag)", current: 790, unit: "bag", projected: 853, vatInclusive: 990 },
   { name: "Steel Reinforcement (per ton)", current: 107500, unit: "ton", projected: 116100, vatInclusive: 134676 },
@@ -29,13 +29,21 @@ const MATERIALS_2026 = [
   { name: "Roofing Sheets (per m²)", current: 850, unit: "m²", projected: 918, vatInclusive: 1065 },
 ]
 
-// Construction cost per m² by region (2026) [citation:2][citation:5]
+// Construction cost per m² by region (2026)
 const REGIONAL_COSTS = [
   { region: "Nairobi", basic: 65000, standard: 80000, premium: 100000 },
   { region: "Mombasa", basic: 60000, standard: 75000, premium: 90000 },
   { region: "Kisumu", basic: 50000, standard: 65000, premium: 80000 },
   { region: "Eldoret", basic: 55000, standard: 70000, premium: 85000 },
   { region: "Rural Areas", basic: 45000, standard: 55000, premium: 70000 },
+]
+
+// BOQ Sheets available for purchase
+const BOQ_SHEETS = [
+  { id: "residential-boq", title: "Residential House (200m²)", price: "KSh 2,500", format: "Excel", pages: 12, image: "/images/shop/residential-boq.jpg" },
+  { id: "commercial-boq", title: "Commercial Building (500m²)", price: "KSh 4,500", format: "Excel", pages: 18, image: "/images/shop/commercial-boq.jpg" },
+  { id: "road-works-boq", title: "Road Works (per km)", price: "KSh 3,900", format: "Excel", pages: 15, image: "/images/shop/road-boq.jpg" },
+  { id: "water-supply-boq", title: "Water Supply System", price: "KSh 3,200", format: "Excel", pages: 10, image: "/images/shop/water-boq.jpg" },
 ]
 
 export default function PricesPage() {
@@ -54,8 +62,14 @@ export default function PricesPage() {
             Quarterly Construction Input Price Indices (CIPI) with real-time VAT analysis. 
             Data sourced from KNBS official reports and industry updates for 2026.
           </p>
-          <div className="mt-6 inline-flex items-center gap-2 bg-gold-500 bg-opacity-20 border border-gold-400 text-gold-300 px-4 py-2 rounded-full text-sm">
-            <Database size={14}/> Official Government Data · Base: Q4 2019 = 100 · VAT: 16% [citation:1]
+          <div className="mt-6 flex flex-wrap gap-4">
+            <div className="inline-flex items-center gap-2 bg-gold-500 bg-opacity-20 border border-gold-400 text-gold-300 px-4 py-2 rounded-full text-sm">
+              <Database size={14}/> Official Government Data · Base: Q4 2019 = 100 · VAT: 16%
+            </div>
+            <a href="/downloads/monthly-price-indicator-march-2026.pdf" download 
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-4 py-2 rounded-full text-sm transition">
+              <Download size={14}/> Download Monthly Price Indicator (PDF)
+            </a>
           </div>
         </div>
       </section>
@@ -65,9 +79,9 @@ export default function PricesPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-14">
           {[
             { label: 'Overall CIPI (Q1 2026 est.)',  value: '124.80', sub: '+2.9% vs Q3 2025', trend: 'up', note: 'Projected increase' },
-            { label: 'Year-on-Year Inflation',   value: '4.3%',  sub: 'Feb 2026 [citation:9]', trend: 'up' },
-            { label: 'Cement Price (50kg)',      value: 'KES 790', sub: '+12% vs 2025 [citation:8]', trend: 'up' },
-            { label: 'Steel Price (per ton)',    value: 'KES 107,500', sub: '+5.2% last quarter [citation:10]', trend: 'up' },
+            { label: 'Year-on-Year Inflation',   value: '4.3%',  sub: 'Feb 2026', trend: 'up' },
+            { label: 'Cement Price (50kg)',      value: 'KES 790', sub: '+12% vs 2025', trend: 'up' },
+            { label: 'Steel Price (per ton)',    value: 'KES 107,500', sub: '+5.2% last quarter', trend: 'up' },
           ].map(c => (
             <div key={c.label} className="card p-6">
               <p className="text-forest-500 text-sm mb-2">{c.label}</p>
@@ -85,7 +99,7 @@ export default function PricesPage() {
         <div className="card overflow-hidden mb-14">
           <div className="bg-forest-800 text-white px-6 py-4 font-semibold text-lg flex items-center justify-between flex-wrap gap-3">
             <span className="flex items-center gap-2"><Percent size={18}/> Material Price Analysis with VAT (2026)</span>
-            <span className="text-sm bg-white/20 px-3 py-1 rounded-full">Standard VAT Rate: 16% [citation:1]</span>
+            <span className="text-sm bg-white/20 px-3 py-1 rounded-full">Standard VAT Rate: 16%</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -126,20 +140,20 @@ export default function PricesPage() {
             </table>
           </div>
           <div className="px-6 py-3 bg-forest-50 text-forest-500 text-xs flex items-center justify-between flex-wrap gap-2">
-            <div className="flex items-center gap-2"><Info size={13}/> VAT calculated at 16% as per Kenya Revenue Authority guidelines for construction materials [citation:1]</div>
-            <div className="flex items-center gap-2"><AlertCircle size={13}/> Imported materials may incur additional customs duties [citation:1][citation:4]</div>
+            <div className="flex items-center gap-2"><Info size={13}/> VAT calculated at 16% as per Kenya Revenue Authority guidelines for construction materials</div>
+            <div className="flex items-center gap-2"><AlertCircle size={13}/> Imported materials may incur additional customs duties</div>
           </div>
         </div>
 
-        {/* Cost Projection Calculator - Interactive */}
-        <div className="card p-8 mb-14 bg-gradient-to-r from-forest-50 to-white">
+        {/* Cost Projection Calculator - Interactive (Fixed) */}
+        <div className="card p-8 mb-14 bg-gradient-to-r from-forest-50 to-white" id="calculator">
           <div className="flex items-start gap-4 flex-wrap md:flex-nowrap">
             <div className="bg-gold-100 p-4 rounded-2xl">
               <Calculator className="w-8 h-8 text-gold-600" />
             </div>
             <div className="flex-1">
               <h2 className="text-2xl font-bold text-forest-900 mb-2">📊 See How Your Project Costs Change</h2>
-              <p className="text-forest-600 mb-4">Adjust the price increase slider to see the impact on your construction budget</p>
+              <p className="text-forest-600 mb-4">Adjust the sliders below to see the impact on your construction budget</p>
               
               <div className="grid md:grid-cols-2 gap-6 mt-4">
                 <div>
@@ -180,10 +194,75 @@ export default function PricesPage() {
                   </div>
                 </div>
                 <p className="text-forest-300 text-xs text-center mt-3 flex items-center justify-center gap-1">
-                  <Info size={12}/> Based on standard construction cost of KES 66,000/m² for mid-range quality [citation:2]
+                  <Info size={12}/> Based on standard construction cost of KES 66,000/m² for mid-range quality
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* BOQ Sheets & Downloads Section */}
+        <div className="mb-14">
+          <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+            <h2 className="text-2xl font-bold text-forest-900 flex items-center gap-2">
+              <FileSpreadsheet className="text-gold-600" size={28}/>
+              Professional BOQ Sheets & Templates
+            </h2>
+            <a href="/shop" className="text-gold-600 hover:text-gold-700 font-medium flex items-center gap-1">
+              View all in Shop <ArrowRight size={16}/>
+            </a>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {BOQ_SHEETS.map((sheet) => (
+              <div key={sheet.id} className="card p-5 hover:shadow-lg transition">
+                <div className="bg-forest-100 w-full h-32 rounded-lg mb-4 flex items-center justify-center">
+                  <FileText className="w-12 h-12 text-forest-600" />
+                </div>
+                <h3 className="font-bold text-forest-900 mb-1">{sheet.title}</h3>
+                <p className="text-sm text-forest-500 mb-2">{sheet.format} · {sheet.pages} pages</p>
+                <p className="text-xl font-bold text-gold-600 mb-3">{sheet.price}</p>
+                <button className="w-full bg-forest-800 text-white py-2 rounded-lg hover:bg-forest-700 transition flex items-center justify-center gap-2">
+                  <ShoppingCart size={16}/> Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Free Downloads Section */}
+        <div className="bg-forest-50 rounded-2xl p-6 mb-14">
+          <div className="flex items-center gap-3 mb-4">
+            <Download className="text-gold-600" size={24}/>
+            <h2 className="text-xl font-bold text-forest-900">Free Resources</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a href="/downloads/monthly-price-indicator-march-2026.pdf" download 
+              className="flex items-center gap-3 p-4 bg-white rounded-xl hover:shadow-md transition group">
+              <FileText className="text-gold-600 group-hover:text-gold-700" size={20}/>
+              <div>
+                <p className="font-semibold text-forest-800">Monthly Price Indicator</p>
+                <p className="text-xs text-forest-500">March 2026 · PDF</p>
+              </div>
+              <Download size={16} className="ml-auto text-forest-400"/>
+            </a>
+            <a href="/downloads/boq-template-residential.xlsx" download 
+              className="flex items-center gap-3 p-4 bg-white rounded-xl hover:shadow-md transition group">
+              <FileSpreadsheet className="text-gold-600 group-hover:text-gold-700" size={20}/>
+              <div>
+                <p className="font-semibold text-forest-800">BOQ Template (Residential)</p>
+                <p className="text-xs text-forest-500">Excel · Free Sample</p>
+              </div>
+              <Download size={16} className="ml-auto text-forest-400"/>
+            </a>
+            <a href="/downloads/material-cost-tracker.xlsx" download 
+              className="flex items-center gap-3 p-4 bg-white rounded-xl hover:shadow-md transition group">
+              <Calculator className="text-gold-600 group-hover:text-gold-700" size={20}/>
+              <div>
+                <p className="font-semibold text-forest-800">Material Cost Tracker</p>
+                <p className="text-xs text-forest-500">Excel · Automated</p>
+              </div>
+              <Download size={16} className="ml-auto text-forest-400"/>
+            </a>
           </div>
         </div>
 
@@ -201,7 +280,7 @@ export default function PricesPage() {
                   <th className="text-right px-4 py-4">Standard Finish</th>
                   <th className="text-right px-6 py-4">Premium/Luxury</th>
                   <th className="px-6 py-4">VAT Impact (Standard)</th>
-                 </tr>
+                </tr>
               </thead>
               <tbody>
                 {REGIONAL_COSTS.map((r, i) => (
@@ -217,9 +296,6 @@ export default function PricesPage() {
                 ))}
               </tbody>
             </table>
-          </div>
-          <div className="px-6 py-3 bg-forest-50 text-forest-500 text-xs">
-            Regional variations account for labor costs, material transport, and local market conditions [citation:2][citation:5]
           </div>
         </div>
 
@@ -244,40 +320,39 @@ export default function PricesPage() {
               )
             })}
           </div>
-          <p className="text-forest-500 text-xs mt-4 text-center">*Q1 2026 is projected based on current inflation trends [citation:3][citation:9]</p>
         </div>
 
-        {/* Expert CTA - Project Cost Management */}
-        <div className="bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl p-8 mb-8">
+        {/* Expert CTA - Project Cost Management (Inverted Colors) */}
+        <div className="bg-forest-900 rounded-2xl p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-forest-900 mb-2">We Can Manage Your Project to Control Costs</h3>
-              <p className="text-forest-800 text-lg mb-3">Don't let material price fluctuations derail your budget.</p>
-              <p className="text-forest-800/90 mb-4">Our expert project managers and quantity surveyors help you:</p>
+              <h3 className="text-2xl font-bold text-gold-400 mb-2">We Can Manage Your Project to Control Costs</h3>
+              <p className="text-forest-200 text-lg mb-3">Don't let material price fluctuations derail your budget.</p>
+              <p className="text-forest-300 mb-4">Our expert project managers and quantity surveyors help you:</p>
               <ul className="space-y-2 mb-6">
-                <li className="flex items-center gap-2 text-forest-800"><span className="text-forest-900 font-bold">✓</span> Lock in material prices through strategic procurement</li>
-                <li className="flex items-center gap-2 text-forest-800"><span className="text-forest-900 font-bold">✓</span> Optimize design to reduce material waste by 15-20%</li>
-                <li className="flex items-center gap-2 text-forest-800"><span className="text-forest-900 font-bold">✓</span> Navigate VAT and tax implications for maximum savings [citation:1][citation:7]</li>
-                <li className="flex items-center gap-2 text-forest-800"><span className="text-forest-900 font-bold">✓</span> Real-time cost monitoring with 10-15% contingency planning [citation:2]</li>
+                <li className="flex items-center gap-2 text-forest-200"><span className="text-gold-400 font-bold">✓</span> Lock in material prices through strategic procurement</li>
+                <li className="flex items-center gap-2 text-forest-200"><span className="text-gold-400 font-bold">✓</span> Optimize design to reduce material waste by 15-20%</li>
+                <li className="flex items-center gap-2 text-forest-200"><span className="text-gold-400 font-bold">✓</span> Navigate VAT and tax implications for maximum savings</li>
+                <li className="flex items-center gap-2 text-forest-200"><span className="text-gold-400 font-bold">✓</span> Real-time cost monitoring with 10-15% contingency planning</li>
               </ul>
-              <button className="bg-forest-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-forest-800 transition inline-flex items-center gap-2">
+              <button className="bg-gold-500 text-forest-900 px-6 py-3 rounded-lg font-semibold hover:bg-gold-400 transition inline-flex items-center gap-2">
                 Request a Free Cost Assessment <ArrowRight size={18}/>
               </button>
             </div>
-            <div className="bg-white/20 p-6 rounded-xl text-center min-w-[200px]">
-              <p className="text-forest-900 font-bold text-lg">Meet Our Experts</p>
+            <div className="bg-forest-800/50 p-6 rounded-xl text-center min-w-[200px] border border-forest-700">
+              <p className="text-gold-400 font-bold text-lg">Meet Our Experts</p>
               <div className="mt-3 space-y-3">
                 <div>
-                  <p className="font-semibold text-forest-900">Eng. Dr. Paul Macharia</p>
-                  <p className="text-xs text-forest-800">PhD Civil Engineering | 15+ years experience</p>
+                  <p className="font-semibold text-white">Eng. Dr. Paul Macharia</p>
+                  <p className="text-xs text-forest-300">PhD Civil Engineering | 15+ years experience</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-forest-900">Eng. Paul Methu</p>
-                  <p className="text-xs text-forest-800">32+ years | EBK Consulting Engineer</p>
+                  <p className="font-semibold text-white">Eng. Paul Methu</p>
+                  <p className="text-xs text-forest-300">32+ years | EBK Consulting Engineer</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-forest-900">Grace Njeri, MRICS</p>
-                  <p className="text-xs text-forest-800">Quantity Surveyor | Cost Management Expert</p>
+                  <p className="font-semibold text-white">Grace Njeri, MRICS</p>
+                  <p className="text-xs text-forest-300">Quantity Surveyor | Cost Management Expert</p>
                 </div>
               </div>
             </div>
@@ -289,12 +364,12 @@ export default function PricesPage() {
           <h3 className="font-bold text-forest-900 mb-5 flex items-center gap-2"><Database size={20} className="text-gold-500"/> Data Sources & Methodology (2026 Update)</h3>
           <div className="space-y-4">
             {[
-              'Kenya National Bureau of Statistics (KNBS) – Official CPI at 4.3% (February 2026) [citation:3][citation:9]',
-              'Construction Input Price Index (CIPI) – Steel +5.2% quarterly, Sand +3.6% (Q3 2025) [citation:10]',
-              'VAT Rate: 16% standard for construction materials per KRA guidelines [citation:1]',
-              'Material Prices: Cement at KES 790-900 per 50kg bag (2026) [citation:8], Steel at KES 95,000-120,000 per ton [citation:5]',
-              'Regional construction costs: Nairobi KES 60,000-90,000/m², Rural KES 40,000-55,000/m² [citation:2][citation:5]',
-              '2026 Projections: Industry experts forecast 5-8% annual cost increases [citation:5][citation:10]',
+              'Kenya National Bureau of Statistics (KNBS) – Official CPI at 4.3% (February 2026)',
+              'Construction Input Price Index (CIPI) – Steel +5.2% quarterly, Sand +3.6% (Q3 2025)',
+              'VAT Rate: 16% standard for construction materials per KRA guidelines',
+              'Material Prices: Cement at KES 790-900 per 50kg bag (2026), Steel at KES 95,000-120,000 per ton',
+              'Regional construction costs: Nairobi KES 60,000-90,000/m², Rural KES 40,000-55,000/m²',
+              '2026 Projections: Industry experts forecast 5-8% annual cost increases',
             ].map(s => (
               <div key={s} className="flex items-start gap-3 text-sm text-forest-700">
                 <div className="w-2 h-2 rounded-full bg-gold-500 mt-1.5 shrink-0"/>
@@ -307,42 +382,56 @@ export default function PricesPage() {
         {/* Disclaimer */}
         <div className="flex items-start gap-3 text-sm text-forest-500 bg-white border border-forest-100 rounded-2xl p-5">
           <Info size={16} className="mt-0.5 shrink-0 text-gold-500"/>
-          <p>Disclaimer: Indices are based on KNBS official data and industry sources for 2026. Actual prices may vary by region, supplier, and project scale. VAT calculations assume standard rate applicability; consult your tax advisor for specific project requirements. [citation:1][citation:3][citation:5]</p>
+          <p>Disclaimer: Indices are based on KNBS official data and industry sources for 2026. Actual prices may vary by region, supplier, and project scale. VAT calculations assume standard rate applicability; consult your tax advisor for specific project requirements.</p>
         </div>
       </div>
 
-      {/* Interactive Calculator Script */}
+      {/* Interactive Calculator Script - Fixed with proper DOM ready */}
       <script dangerouslySetInnerHTML={{
         __html: `
-          const areaSlider = document.getElementById('projectArea');
-          const cementSlider = document.getElementById('cementIncrease');
-          const areaValue = document.getElementById('areaValue');
-          const cementValue = document.getElementById('cementValue');
-          const currentCostSpan = document.getElementById('currentCost');
-          const projectedCostSpan = document.getElementById('projectedCost');
-          const additionalCostSpan = document.getElementById('additionalCost');
-          
-          const BASE_COST_PER_M2 = 66000; // Mid-range standard construction cost [citation:2]
-          
-          function updateCalculator() {
-            const area = parseInt(areaSlider.value);
-            const increasePct = parseInt(cementSlider.value);
+          function initCalculator() {
+            const areaSlider = document.getElementById('projectArea');
+            const cementSlider = document.getElementById('cementIncrease');
+            const areaValue = document.getElementById('areaValue');
+            const cementValue = document.getElementById('cementValue');
+            const currentCostSpan = document.getElementById('currentCost');
+            const projectedCostSpan = document.getElementById('projectedCost');
+            const additionalCostSpan = document.getElementById('additionalCost');
             
-            areaValue.textContent = area + ' m²';
-            cementValue.textContent = increasePct + '%';
+            if (!areaSlider || !cementSlider) {
+              console.log('Calculator elements not found yet, retrying...');
+              setTimeout(initCalculator, 100);
+              return;
+            }
             
-            const currentCost = area * BASE_COST_PER_M2;
-            const projectedCost = currentCost * (1 + (increasePct / 100) * 0.35); // Cement is ~35% of total cost
-            const additional = projectedCost - currentCost;
+            const BASE_COST_PER_M2 = 66000;
             
-            currentCostSpan.textContent = 'KES ' + Math.round(currentCost).toLocaleString();
-            projectedCostSpan.textContent = 'KES ' + Math.round(projectedCost).toLocaleString();
-            additionalCostSpan.innerHTML = '+ KES ' + Math.round(additional).toLocaleString();
+            function updateCalculator() {
+              const area = parseInt(areaSlider.value, 10);
+              const increasePct = parseInt(cementSlider.value, 10);
+              
+              if (areaValue) areaValue.textContent = area + ' m²';
+              if (cementValue) cementValue.textContent = increasePct + '%';
+              
+              const currentCost = area * BASE_COST_PER_M2;
+              const projectedCost = currentCost * (1 + (increasePct / 100) * 0.35);
+              const additional = projectedCost - currentCost;
+              
+              if (currentCostSpan) currentCostSpan.textContent = 'KES ' + Math.round(currentCost).toLocaleString();
+              if (projectedCostSpan) projectedCostSpan.textContent = 'KES ' + Math.round(projectedCost).toLocaleString();
+              if (additionalCostSpan) additionalCostSpan.innerHTML = '+ KES ' + Math.round(additional).toLocaleString();
+            }
+            
+            areaSlider.addEventListener('input', updateCalculator);
+            cementSlider.addEventListener('input', updateCalculator);
+            updateCalculator();
           }
           
-          areaSlider.addEventListener('input', updateCalculator);
-          cementSlider.addEventListener('input', updateCalculator);
-          updateCalculator();
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCalculator);
+          } else {
+            initCalculator();
+          }
         `
       }} />
     </div>

@@ -1,8 +1,5 @@
-'use client'
-
 import { Users, Linkedin, Crown } from 'lucide-react'
-import Image from 'next/image'
-import { useState } from 'react'
+import TeamImage from '@/components/TeamImage'
 import { TEAM } from '@/lib/data'
 
 export const metadata = {
@@ -13,35 +10,6 @@ export const metadata = {
 export default function TeamPage() {
   const founders = TEAM.filter(m => m.isFounder)
   const staff    = TEAM.filter(m => !m.isFounder)
-
-  // Helper to get initials from name
-  const getInitials = (name: string) => {
-    return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()
-  }
-
-  // Image component with fallback
-  const TeamImage = ({ src, alt, name, className }: { src?: string; alt: string; name: string; className?: string }) => {
-    const [error, setError] = useState(false)
-
-    if (error || !src) {
-      return (
-        <div className={`bg-gradient-to-br from-forest-700 to-forest-900 flex items-center justify-center ${className}`}>
-          <span className="text-white text-2xl font-bold">{getInitials(name)}</span>
-        </div>
-      )
-    }
-
-    return (
-      <div className={`relative ${className}`}>
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover"
-          onError={() => setError(true)}
-        />
-      </div>
-    )
-  }
 
   return (
     <div>

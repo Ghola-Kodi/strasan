@@ -1,5 +1,8 @@
+'use client'
+
 import { Users, Linkedin, Crown } from 'lucide-react'
 import Image from 'next/image'
+import { useState } from 'react'
 import { TEAM } from '@/lib/data'
 
 export const metadata = {
@@ -14,6 +17,30 @@ export default function TeamPage() {
   // Helper to get initials from name
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()
+  }
+
+  // Image component with fallback
+  const TeamImage = ({ src, alt, name, className }: { src?: string; alt: string; name: string; className?: string }) => {
+    const [error, setError] = useState(false)
+
+    if (error || !src) {
+      return (
+        <div className={`bg-gradient-to-br from-forest-700 to-forest-900 flex items-center justify-center ${className}`}>
+          <span className="text-white text-2xl font-bold">{getInitials(name)}</span>
+        </div>
+      )
+    }
+
+    return (
+      <div className={`relative ${className}`}>
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover"
+          onError={() => setError(true)}
+        />
+      </div>
+    )
   }
 
   return (
@@ -40,25 +67,12 @@ export default function TeamPage() {
         <div className="grid md:grid-cols-2 gap-8">
           {founders.map(f => (
             <div key={f.id} className="card p-8">
-              {/* Image with fallback */}
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-forest-700 to-forest-900 flex items-center justify-center mb-6 overflow-hidden">
-                {f.image ? (
-                  <img
-                    src={f.image}
-                    alt={f.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                      const parent = e.currentTarget.parentElement
-                      if (parent) {
-                        parent.innerHTML = `<span class="text-white text-2xl font-bold">${getInitials(f.name)}</span>`
-                      }
-                    }}
-                  />
-                ) : (
-                  <span className="text-white text-2xl font-bold">{getInitials(f.name)}</span>
-                )}
-              </div>
+              <TeamImage
+                src={f.image}
+                alt={f.name}
+                name={f.name}
+                className="w-20 h-20 rounded-full mb-6 overflow-hidden"
+              />
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-forest-900">{f.name}</h3>
@@ -95,24 +109,12 @@ export default function TeamPage() {
             {staff.map(m => (
               <div key={m.id} className="card p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-forest-500 to-forest-700 flex items-center justify-center shrink-0 overflow-hidden">
-                    {m.image ? (
-                      <img
-                        src={m.image}
-                        alt={m.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none'
-                          const parent = e.currentTarget.parentElement
-                          if (parent) {
-                            parent.innerHTML = `<span class="text-white font-bold text-lg">${getInitials(m.name)}</span>`
-                          }
-                        }}
-                      />
-                    ) : (
-                      <span className="text-white font-bold text-lg">{getInitials(m.name)}</span>
-                    )}
-                  </div>
+                  <TeamImage
+                    src={m.image}
+                    alt={m.name}
+                    name={m.name}
+                    className="w-14 h-14 rounded-full shrink-0 overflow-hidden"
+                  />
                   <div>
                     <h3 className="font-bold text-forest-900">{m.name}</h3>
                     <p className="text-gold-600 text-sm font-medium">{m.role}</p>

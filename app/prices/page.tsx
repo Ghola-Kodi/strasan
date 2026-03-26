@@ -1,4 +1,5 @@
-import { TrendingUp, TrendingDown, Minus, Database, Info, Calculator, Building2, AlertCircle, Percent, ArrowRight, FileText, Download, ShoppingCart, FileSpreadsheet } from 'lucide-react'
+import { TrendingUp, TrendingDown, Minus, Database, Info, Calculator, Building2, AlertCircle, Percent, ArrowRight, FileText, Download, ShoppingCart, FileSpreadsheet, Shield, Briefcase, Home, Building, Waves, Mail, Phone, User } from 'lucide-react'
+import Link from 'next/link'
 import { PRICE_MATERIALS, OVERALL_CIPI } from '@/lib/data'
 
 export const metadata = {
@@ -38,12 +39,62 @@ const REGIONAL_COSTS = [
   { region: "Rural Areas", basic: 45000, standard: 55000, premium: 70000 },
 ]
 
-// BOQ Sheets available for purchase
-const BOQ_SHEETS = [
-  { id: "residential-boq", title: "Residential House (200m²)", price: "KSh 2,500", format: "Excel", pages: 12, image: "/images/shop/residential-boq.jpg" },
-  { id: "commercial-boq", title: "Commercial Building (500m²)", price: "KSh 4,500", format: "Excel", pages: 18, image: "/images/shop/commercial-boq.jpg" },
-  { id: "road-works-boq", title: "Road Works (per km)", price: "KSh 3,900", format: "Excel", pages: 15, image: "/images/shop/road-boq.jpg" },
-  { id: "water-supply-boq", title: "Water Supply System", price: "KSh 3,200", format: "Excel", pages: 10, image: "/images/shop/water-boq.jpg" },
+// Premium BOQ Templates - High Value Items (7,000+ KSh)
+const PREMIUM_BOQ_SHEETS = [
+  { 
+    id: "residential-villa-boq", 
+    title: "Luxury Residential Villa (500m²)", 
+    price: "KSh 12,500", 
+    format: "Excel + PDF", 
+    pages: 28, 
+    icon: Home,
+    description: "Complete BOQ for high-end residential villas including finishes, MEP, and landscaping"
+  },
+  { 
+    id: "commercial-complex-boq", 
+    title: "Commercial Complex (2,000m²)", 
+    price: "KSh 18,900", 
+    format: "Excel + PDF", 
+    pages: 45, 
+    icon: Building,
+    description: "Full commercial development BOQ with office spaces, retail units, and parking"
+  },
+  { 
+    id: "road-highway-boq", 
+    title: "Road & Highway (per km)", 
+    price: "KSh 15,500", 
+    format: "Excel + PDF", 
+    pages: 32, 
+    icon: Briefcase,
+    description: "Comprehensive road works BOQ including earthworks, pavements, drainage, and signage"
+  },
+  { 
+    id: "water-supply-boq", 
+    title: "Water Supply Network (5km)", 
+    price: "KSh 9,800", 
+    format: "Excel + PDF", 
+    pages: 22, 
+    icon: Waves,
+    description: "Complete water distribution BOQ with pipelines, reservoirs, and pumping stations"
+  },
+  { 
+    id: "multi-storey-boq", 
+    title: "Multi-Storey Apartment (15 Units)", 
+    price: "KSh 14,500", 
+    format: "Excel + PDF", 
+    pages: 38, 
+    icon: Building2,
+    description: "Detailed BOQ for mid-rise residential apartments with structural and finishes"
+  },
+  { 
+    id: "industrial-warehouse-boq", 
+    title: "Industrial Warehouse (1,000m²)", 
+    price: "KSh 11,900", 
+    format: "Excel + PDF", 
+    pages: 26, 
+    icon: Shield,
+    description: "Industrial facility BOQ including steel structures, foundations, and MEP systems"
+  },
 ]
 
 export default function PricesPage() {
@@ -201,31 +252,59 @@ export default function PricesPage() {
           </div>
         </div>
 
-        {/* BOQ Sheets & Downloads Section */}
+        {/* Premium BOQ Templates Section */}
         <div className="mb-14">
           <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
-            <h2 className="text-2xl font-bold text-forest-900 flex items-center gap-2">
-              <FileSpreadsheet className="text-gold-600" size={28}/>
-              Professional BOQ Sheets & Templates
-            </h2>
-            <a href="/shop" className="text-gold-600 hover:text-gold-700 font-medium flex items-center gap-1">
-              View all in Shop <ArrowRight size={16}/>
-            </a>
+            <div>
+              <h2 className="text-2xl font-bold text-forest-900 flex items-center gap-2">
+                <FileSpreadsheet className="text-gold-600" size={28}/>
+                Professional BOQ Templates
+              </h2>
+              <p className="text-forest-600 mt-1">Comprehensive Bills of Quantities for various construction projects</p>
+            </div>
+            <Link href="/shop" className="bg-gold-500 text-forest-900 px-5 py-2 rounded-lg font-medium hover:bg-gold-400 transition flex items-center gap-2">
+              <ShoppingCart size={18}/> Visit Our Shop
+            </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {BOQ_SHEETS.map((sheet) => (
-              <div key={sheet.id} className="card p-5 hover:shadow-lg transition">
-                <div className="bg-forest-100 w-full h-32 rounded-lg mb-4 flex items-center justify-center">
-                  <FileText className="w-12 h-12 text-forest-600" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PREMIUM_BOQ_SHEETS.map((sheet) => {
+              const IconComponent = sheet.icon
+              return (
+                <div key={sheet.id} className="card p-6 hover:shadow-xl transition group border border-gray-100">
+                  <div className="bg-gold-50 w-14 h-14 rounded-xl mb-4 flex items-center justify-center group-hover:bg-gold-100 transition">
+                    <IconComponent className="w-7 h-7 text-gold-600" />
+                  </div>
+                  <h3 className="font-bold text-xl text-forest-900 mb-1">{sheet.title}</h3>
+                  <p className="text-sm text-forest-500 mb-2">{sheet.format} · {sheet.pages} pages</p>
+                  <p className="text-forest-600 text-sm mb-3">{sheet.description}</p>
+                  <p className="text-2xl font-bold text-gold-600 mb-3">{sheet.price}</p>
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-forest-800 text-white py-2.5 rounded-lg hover:bg-forest-700 transition flex items-center justify-center gap-2">
+                      <ShoppingCart size={16}/> Add to Cart
+                    </button>
+                    <button className="px-4 py-2.5 border border-forest-200 rounded-lg text-forest-600 hover:bg-forest-50 transition">
+                      Preview
+                    </button>
+                  </div>
                 </div>
-                <h3 className="font-bold text-forest-900 mb-1">{sheet.title}</h3>
-                <p className="text-sm text-forest-500 mb-2">{sheet.format} · {sheet.pages} pages</p>
-                <p className="text-xl font-bold text-gold-600 mb-3">{sheet.price}</p>
-                <button className="w-full bg-forest-800 text-white py-2 rounded-lg hover:bg-forest-700 transition flex items-center justify-center gap-2">
-                  <ShoppingCart size={16}/> Add to Cart
-                </button>
+              )
+            })}
+          </div>
+          
+          {/* Expert Customization Note */}
+          <div className="mt-6 bg-gold-50 border border-gold-200 rounded-xl p-4 flex items-center justify-between flex-wrap gap-3">
+            <div className="flex items-center gap-3">
+              <div className="bg-gold-100 p-2 rounded-full">
+                <User className="w-5 h-5 text-gold-700" />
               </div>
-            ))}
+              <div>
+                <p className="text-forest-800 font-medium">Need customization for your specific project?</p>
+                <p className="text-forest-600 text-sm"><span className="font-semibold">Eng. Paul Methu</span> will help tailor any BOQ to your exact requirements</p>
+              </div>
+            </div>
+            <Link href="/contact" className="text-gold-700 font-medium hover:text-gold-800 flex items-center gap-1">
+              Request Customization <ArrowRight size={16}/>
+            </Link>
           </div>
         </div>
 
@@ -322,8 +401,8 @@ export default function PricesPage() {
           </div>
         </div>
 
-        {/* Expert CTA - Project Cost Management (Inverted Colors) */}
-        <div className="bg-forest-900 rounded-2xl p-8 mb-8">
+        {/* Expert CTA - Project Cost Management (Redirects to Quote Page) */}
+        <Link href="/quote" className="block bg-forest-900 rounded-2xl p-8 mb-8 hover:shadow-xl transition group">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-gold-400 mb-2">We Can Manage Your Project to Control Costs</h3>
@@ -335,9 +414,9 @@ export default function PricesPage() {
                 <li className="flex items-center gap-2 text-forest-200"><span className="text-gold-400 font-bold">✓</span> Navigate VAT and tax implications for maximum savings</li>
                 <li className="flex items-center gap-2 text-forest-200"><span className="text-gold-400 font-bold">✓</span> Real-time cost monitoring with 10-15% contingency planning</li>
               </ul>
-              <button className="bg-gold-500 text-forest-900 px-6 py-3 rounded-lg font-semibold hover:bg-gold-400 transition inline-flex items-center gap-2">
+              <div className="inline-flex items-center gap-2 bg-gold-500 text-forest-900 px-6 py-3 rounded-lg font-semibold hover:bg-gold-400 transition group-hover:translate-x-1 duration-200">
                 Request a Free Cost Assessment <ArrowRight size={18}/>
-              </button>
+              </div>
             </div>
             <div className="bg-forest-800/50 p-6 rounded-xl text-center min-w-[200px] border border-forest-700">
               <p className="text-gold-400 font-bold text-lg">Meet Our Experts</p>
@@ -357,7 +436,7 @@ export default function PricesPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* Data Sources & Methodology */}
         <div className="bg-forest-50 border border-forest-200 rounded-3xl p-8 mb-8">

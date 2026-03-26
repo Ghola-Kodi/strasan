@@ -1,4 +1,5 @@
 import { Users, Linkedin, Crown } from 'lucide-react'
+import Image from 'next/image'
 import { TEAM } from '@/lib/data'
 
 export const metadata = {
@@ -34,11 +35,26 @@ export default function TeamPage() {
         <div className="grid md:grid-cols-2 gap-8">
           {founders.map(f => (
             <div key={f.id} className="card p-8">
-              {/* Avatar placeholder */}
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-forest-700 to-forest-900 flex items-center justify-center mb-6">
-                <span className="text-white text-2xl font-bold">
-                  {f.name.split(' ').map(n => n[0]).join('')}
-                </span>
+              {/* Image with fallback */}
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-forest-700 to-forest-900 flex items-center justify-center mb-6 overflow-hidden">
+                {f.image && (f.image.startsWith('/') || f.image.startsWith('http')) ? (
+                  <img 
+                    src={f.image} 
+                    alt={f.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-white text-2xl font-bold">${f.name.split(' ').map(n => n[0]).join('')}</span>`;
+                      }
+                    }}
+                  />
+                ) : (
+                  <span className="text-white text-2xl font-bold">
+                    {f.name.split(' ').map(n => n[0]).join('')}
+                  </span>
+                )}
               </div>
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -76,10 +92,25 @@ export default function TeamPage() {
             {staff.map(m => (
               <div key={m.id} className="card p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-forest-500 to-forest-700 flex items-center justify-center shrink-0">
-                    <span className="text-white font-bold text-lg">
-                      {m.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-forest-500 to-forest-700 flex items-center justify-center shrink-0 overflow-hidden">
+                    {m.image && (m.image.startsWith('/') || m.image.startsWith('http')) ? (
+                      <img 
+                        src={m.image} 
+                        alt={m.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          const parent = e.currentTarget.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<span class="text-white font-bold text-lg">${m.name.split(' ').map(n => n[0]).join('')}</span>`;
+                          }
+                        }}
+                      />
+                    ) : (
+                      <span className="text-white font-bold text-lg">
+                        {m.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <h3 className="font-bold text-forest-900">{m.name}</h3>

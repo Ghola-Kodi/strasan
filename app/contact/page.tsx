@@ -1,4 +1,4 @@
-import { User, Mail, Phone, MapPin, Calendar, Award, Briefcase, FileText, MessageSquare, Send, CheckCircle, Clock, Linkedin, Twitter, Facebook, Shield, HardHat, Droplet, Building2, Ruler, Wrench, ArrowRight, Star, ChevronRight, Calculator, Route, Layers, FileCheck } from 'lucide-react'
+import { User, Mail, Phone, MapPin, Calendar, Award, Briefcase, FileText, MessageSquare, Send, CheckCircle, Clock, Shield, HardHat, Droplet, Building2, Ruler, Wrench, ArrowRight, Star, ChevronRight, Calculator, Route, Layers, FileCheck } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Get personalized BOQ templates tailored to your specific construction project. Work directly with Eng. Paul Methu, EBK Consulting Engineer with 32+ years experience in highway engineering, materials, and cost management.',
 }
 
-// Team members data - streamlined for conversion
+// Team members data
 const TEAM_MEMBERS = [
   {
     name: "Eng. Paul Methu",
@@ -17,7 +17,7 @@ const TEAM_MEMBERS = [
     image: "/images/team/paul-methu.jpg",
     bio: "Eng. Paul Methu is a practicing Consulting Engineer registered with the Engineers Board of Kenya (EBK). He holds a BSc in Civil Engineering and is also a Certified Public Accountant (CPA 2) and NEMA Lead Expert. His unique combination of engineering and financial expertise ensures your BOQ is both technically sound and cost-optimized.",
     technicalCapabilities: [
-      { icon: Route, title: "Highway Engineering", desc: "360km Pagak–Maiwut–Mathiang–Paloich Road, South Sudan" },
+      { icon: Route, title: "Highway Engineering", desc: "Major road infrastructure projects across East Africa" },
       { icon: Layers, title: "Materials Engineering", desc: "Expert in material testing, specification, and quality control" },
       { icon: Calculator, title: "Cost Accountant", desc: "CPA 2 | Precise cost planning and budget optimization" },
       { icon: Ruler, title: "Highway Design", desc: "Geometric design, alignment optimisation, pavement design" },
@@ -99,7 +99,7 @@ export default function CustomizationRequestPage() {
                   </div>
                   <div className="border-t border-forest-600 pt-3 text-left space-y-1">
                     <p className="text-forest-300 text-xs flex items-center gap-2">
-                      <CheckCircle size={12} className="text-gold-400"/> Highway Engineering: 360km Pagak–Maiwut Road
+                      <CheckCircle size={12} className="text-gold-400"/> Highway Engineering Expert
                     </p>
                     <p className="text-forest-300 text-xs flex items-center gap-2">
                       <CheckCircle size={12} className="text-gold-400"/> Materials Engineering & Testing
@@ -157,7 +157,7 @@ export default function CustomizationRequestPage() {
             {BOQ_OPTIONS.map((option) => {
               const IconComponent = option.icon
               return (
-                <div key={option.id} className="card p-6 border border-gray-100 hover:shadow-lg transition">
+                <div key={option.id} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition">
                   <div className="bg-gold-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                     <IconComponent className="w-6 h-6 text-gold-600" />
                   </div>
@@ -170,7 +170,7 @@ export default function CustomizationRequestPage() {
           </div>
         </div>
 
-        {/* Team Section - Simplified (Eng. Methu already highlighted, others for support) */}
+        {/* Team Section - Support Team (No distraction links) */}
         <div id="team" className="mb-16">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-forest-900 mb-2">Meet Your Support Team</h2>

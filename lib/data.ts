@@ -21,6 +21,7 @@ export const NAV_LINKS = [
 ];
 
 // ── Team ─────────────────────────────────────────────────────────────────────
+// ── Team ─────────────────────────────────────────────────────────────────────
 export const TEAM = [
   {
     id: "paul-macharia",
@@ -46,7 +47,7 @@ export const TEAM = [
     id: "gerald-kamau",
     name: "Eng. Gerald Kamau",
     role: "Professional Engineer",
-    image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     bio: "Eng. Gerald Kamau is a professional engineer registered with the Engineers Board of Kenya (EBK), with extensive experience in infrastructure engineering, project supervision, and quality assurance for road and bridge projects across East Africa.",
     expertise: ["Project Supervision", "Quality Assurance", "Road Engineering"],
     linkedin: "#",
@@ -56,7 +57,7 @@ export const TEAM = [
     id: "huldah-omao",
     name: "Eng. Huldah Omao",
     role: "Graduate Engineer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     bio: "Eng. Huldah Omao is a graduate engineer focusing on structural analysis and design optimization, supporting project teams in developing detailed designs and engineering reports for civil infrastructure works.",
     expertise: ["Structural Analysis", "Design Optimization", "Engineering Reporting"],
     linkedin: "#",
@@ -66,7 +67,7 @@ export const TEAM = [
     id: "peter-mwangi",
     name: "Peter Mwangi",
     role: "Water & Geotechnical Engineer",
-    image: "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     bio: "BSc Civil Engineering (Egerton), MSc Geotechnics (Cardiff). Delivered foundation investigations and water supply schemes across the Rift Valley and coastal regions.",
     expertise: ["Geotechnical Investigation", "Water Supply Design", "Foundation Engineering"],
     linkedin: "#",
@@ -76,7 +77,7 @@ export const TEAM = [
     id: "grace-njeri",
     name: "Grace Njeri",
     role: "Quantity Surveyor & Cost Manager",
-    image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     bio: "BSc Quantity Surveying (KCA University), MRICS. Expert in construction cost planning, bill of quantities and contract administration under NEC and FIDIC forms.",
     expertise: ["Cost Planning", "Bills of Quantities", "FIDIC/NEC Contracts"],
     linkedin: "#",

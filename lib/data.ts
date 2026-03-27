@@ -17,7 +17,7 @@ export const NAV_LINKS = [
   { label: "Shop",      href: "/shop" },
   { label: "Team",      href: "/team" },
   { label: "Blog",      href: "/blog" },
-  { label: " Price Tracker",    href: "/prices" },
+  { label: " Material Price Tracker",    href: "/prices" },
 ];
 
 // ── Team ─────────────────────────────────────────────────────────────────────

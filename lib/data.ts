@@ -37,7 +37,7 @@ export const TEAM = [
     id: "paul-methu",
     name: "Eng. Paul Methu",
     role: "Founder & Technical Director",
-    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/paul-methu.jpg",
+    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/methu_civil_engineer_Kenya.jpg",
     bio: "Eng. Paul Methu holds a BSc. in Civil Engineering and is a practicing Consulting Engineer registered with the Engineers Board of Kenya (EBK). He is also a Lead Expert in Environmental Impact Assessment (EIA) and Environmental Audit (EA), a Certified Public Accountant (CPA 2), and a Practicing Lead Expert member of the Environmental Institute of Kenya (EIK). Eng. Methu has over 32 years of post-qualification professional experience in Civil and Structural Engineering. He has taken part in many infrastructure and development projects in various capacities, including lead engineer, materials engineer, project manager, highway engineer, environmentalist, and fire and safety inspector across East Africa. These projects include the Pagak–Maiwut–Mathiang–Paloich Road Project (360 km) in South Sudan, the design and supervision of Roads 2000 projects in Nyeri, Laikipia, Kirinyaga, Murang'a, and Kiambu Counties, the Northern Corridor Rehabilitation Programme (Eldoret–Malaba sections), urban infrastructure projects in informal settlements, and multiple residential and commercial developments in Nairobi, Tatu City, Kiambu, and Ngong.",
     expertise: ["Environmental Impact Assessment", "Highway Engineering", "Project Management", "Structural Engineering"],
     linkedin: "#",

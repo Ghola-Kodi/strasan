@@ -187,10 +187,10 @@ export const SHOP_PRODUCTS = {
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   worksheets: [
-    { id: "rc-beam",       title: "RC beam design",             desc: "To KS 1992, with auto graphs and rebar schedules.",   price: "KSh 1,490", image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-    { id: "method-stmt",   title: "Method statement template",  desc: "Comprehensive Word doc for construction activities.", price: "KSh 990",   image: "https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-    { id: "column-design", title: "Column design spreadsheet",  desc: "Biaxial bending, interaction diagrams.",              price: "KSh 1,890", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-    { id: "boq-template",  title: "BoQ template (Excel)",       desc: "Automated bill of quantities with summaries.",        price: "KSh 2,200", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+    { id: "rc-beam",       title: "RC beam design",             desc: "To KS 1992, with auto graphs and rebar schedules.",   price: "KSh 6,490", image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/shop/beam_design.jfif" },
+    { id: "method-stmt",   title: "Method statement template",  desc: "Comprehensive Word doc for construction activities.", price: "KSh 2990",   image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/shop/column design.jpg" },
+    { id: "column-design", title: "Column design spreadsheet",  desc: "Biaxial bending, interaction diagrams.",              price: "KSh 1,890", image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/shop/biaxial.png" },
+    { id: "boq-template",  title: "BoQ template (Excel)",       desc: "Automated bill of quantities with summaries.",        price: "KSh 2,200", image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/shop/boq.png" },
   ],
   downloads: [
     { id: "dwg-pack",    icon: "FileArchive", title: "DWG details pack (100+)",  price: "KSh 2,400" },

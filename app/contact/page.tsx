@@ -1,6 +1,7 @@
 import { User, Mail, Phone, MapPin, Calendar, Award, Briefcase, FileText, MessageSquare, Send, CheckCircle, Clock, Shield, HardHat, Droplet, Building2, Ruler, Wrench, ArrowRight, Star, ChevronRight, Calculator, Route, Layers, FileCheck } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import TeamImage from '@/components/TeamImage'
 
 export const metadata = {
   title: 'Request BOQ Customization | Strasan Group – Eng. Paul Methu',

@@ -1,6 +1,5 @@
 import { User, Mail, Phone, MapPin, Calendar, Award, Briefcase, FileText, MessageSquare, Send, CheckCircle, Clock, Shield, HardHat, Droplet, Building2, Ruler, Wrench, ArrowRight, Star, ChevronRight, Calculator, Route, Layers, FileCheck } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
 import TeamImage from '@/components/TeamImage'
 
 export const metadata = {
@@ -55,40 +54,6 @@ const BOQ_OPTIONS = [
   { id: "water", title: "Water Supply Network", icon: Droplet, price: "From KSh 9,800", desc: "Water distribution BOQ with pipelines, reservoirs, and pumping stations" },
   { id: "industrial", title: "Industrial / Warehouse", icon: Wrench, price: "From KSh 11,900", desc: "Steel structures, foundations, and MEP systems for industrial facilities" },
 ]
-
-// Helper function to get initials
-const getInitials = (name: string) => {
-  return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()
-}
-
-// Team Image Component with fallback
-const TeamImage = ({ src, alt, name, className = "" }: { src?: string; alt: string; name: string; className?: string }) => {
-  if (!src) {
-    return (
-      <div className={`bg-gradient-to-br from-forest-700 to-forest-900 flex items-center justify-center rounded-full ${className}`}>
-        <span className="text-white text-2xl font-bold">{getInitials(name)}</span>
-      </div>
-    )
-  }
-
-  return (
-    <div className={`relative rounded-full overflow-hidden ${className}`}>
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        onError={(e) => {
-          const target = e.target as HTMLImageElement;
-          const parent = target.parentElement;
-          if (parent) {
-            parent.innerHTML = `<div class="bg-gradient-to-br from-forest-700 to-forest-900 w-full h-full flex items-center justify-center rounded-full"><span class="text-white text-2xl font-bold">${getInitials(name)}</span></div>`;
-          }
-        }}
-      />
-    </div>
-  )
-}
 
 export default function CustomizationRequestPage() {
   return (

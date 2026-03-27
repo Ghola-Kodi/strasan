@@ -14,7 +14,7 @@ const TEAM_MEMBERS = [
     role: "Founder & Technical Director",
     qualifications: "EBK Consulting Engineer | NEMA Lead Expert | CPA 2 | 32+ Years Experience",
     expertise: ["Highway Engineering", "Materials Engineering", "Cost Accountant", "Highway Design", "Contract Management", "Environmental Impact Assessment"],
-    image: "/images/team/paul-methu.jpg",
+    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/methu_civil_engineer_Kenya.jpg",
     bio: "Eng. Paul Methu is a practicing Consulting Engineer registered with the Engineers Board of Kenya (EBK). He holds a BSc in Civil Engineering and is also a Certified Public Accountant (CPA 2) and NEMA Lead Expert. His unique combination of engineering and financial expertise ensures your BOQ is both technically sound and cost-optimized.",
     technicalCapabilities: [
       { icon: Route, title: "Highway Engineering", desc: "Major road infrastructure projects across East Africa" },

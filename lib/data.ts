@@ -47,7 +47,7 @@ export const TEAM = [
     id: "gerald-kamau",
     name: "Eng. Gerald Kamau",
     role: "Professional Engineer",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/gerald-kamau.jpeg",
     bio: "Eng. Gerald Kamau is a professional engineer registered with the Engineers Board of Kenya (EBK), with extensive experience in infrastructure engineering, project supervision, and quality assurance for road and bridge projects across East Africa.",
     expertise: ["Project Supervision", "Quality Assurance", "Road Engineering"],
     linkedin: "#",

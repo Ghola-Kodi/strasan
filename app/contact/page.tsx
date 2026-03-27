@@ -36,11 +36,11 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Sylvia Njane",
-    role: "Quantity Surveyor & Cost Manager",
+    role: "Contracts & Cost Manager",
     qualifications: "BTech in Civil and Structural Engineering | Certified Cost Professional",
     expertise: ["Cost Planning", "Bills of Quantities", "FIDIC/NEC Contracts", "Contract Administration"],
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    bio: "Grace Njeri is a Chartered Quantity Surveyor with expertise in construction cost planning and contract administration.",
+    bio: "Sylvia has nearly two decades of experience in infrastructure design, traffic studies, project cost analysis, and contract documentation.",
     technicalCapabilities: [],
   },
 ]

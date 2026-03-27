@@ -7,14 +7,14 @@ export const metadata = {
   description: 'Get personalized BOQ templates tailored to your specific construction project. Work directly with Eng. Paul Methu, EBK Consulting Engineer with 32+ years experience in highway engineering, materials, and cost management.',
 }
 
-// Team members data
+// Team members data with correct image URLs
 const TEAM_MEMBERS = [
   {
     name: "Eng. Paul Methu",
     role: "Founder & Technical Director",
     qualifications: "EBK Consulting Engineer | NEMA Lead Expert | CPA 2 | 32+ Years Experience",
     expertise: ["Highway Engineering", "Materials Engineering", "Cost Accountant", "Highway Design", "Contract Management", "Environmental Impact Assessment"],
-    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/methu_civil_engineer_Kenya.jpg",
+    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/paul-methu.jpg",
     bio: "Eng. Paul Methu is a practicing Consulting Engineer registered with the Engineers Board of Kenya (EBK). He holds a BSc in Civil Engineering and is also a Certified Public Accountant (CPA 2) and NEMA Lead Expert. His unique combination of engineering and financial expertise ensures your BOQ is both technically sound and cost-optimized.",
     technicalCapabilities: [
       { icon: Route, title: "Highway Engineering", desc: "Major road infrastructure projects across East Africa" },
@@ -31,15 +31,15 @@ const TEAM_MEMBERS = [
     qualifications: "Ph.D. Civil Engineering | MSc Transportation | EBK Consulting Engineer",
     expertise: ["Transportation Engineering", "Highway Materials", "Pavement Design", "Geotechnical Engineering"],
     image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/paul-macharia.jpg",
-    bio: "Eng. Dr. Paul Macharia holds a Ph.D. in Civil Engineering and brings deep academic and practical expertise to complex infrastructure projects.",
+    bio: "Eng. Dr. Paul Macharia holds a Ph.D. in Civil Engineering and brings deep academic and practical expertise to complex infrastructure projects. He serves as lead engineer on major road projects across East Africa and lectures at the University of Nairobi.",
     technicalCapabilities: [],
   },
   {
-    name: "Eng. Slyvia Njane",
-    role: "FIDIC Contracts & Cost Manager",
+    name: "Grace Njeri, MRICS",
+    role: "Quantity Surveyor & Cost Manager",
     qualifications: "BSc Quantity Surveying | MRICS | Certified Cost Professional",
     expertise: ["Cost Planning", "Bills of Quantities", "FIDIC/NEC Contracts", "Contract Administration"],
-    image: "/images/team/grace-njeri.jpg",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     bio: "Grace Njeri is a Chartered Quantity Surveyor with expertise in construction cost planning and contract administration.",
     technicalCapabilities: [],
   },
@@ -54,6 +54,40 @@ const BOQ_OPTIONS = [
   { id: "water", title: "Water Supply Network", icon: Droplet, price: "From KSh 9,800", desc: "Water distribution BOQ with pipelines, reservoirs, and pumping stations" },
   { id: "industrial", title: "Industrial / Warehouse", icon: Wrench, price: "From KSh 11,900", desc: "Steel structures, foundations, and MEP systems for industrial facilities" },
 ]
+
+// Helper function to get initials
+const getInitials = (name: string) => {
+  return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()
+}
+
+// Team Image Component with fallback
+const TeamImage = ({ src, alt, name, className = "" }: { src?: string; alt: string; name: string; className?: string }) => {
+  if (!src) {
+    return (
+      <div className={`bg-gradient-to-br from-forest-700 to-forest-900 flex items-center justify-center rounded-full ${className}`}>
+        <span className="text-white text-2xl font-bold">{getInitials(name)}</span>
+      </div>
+    )
+  }
+
+  return (
+    <div className={`relative rounded-full overflow-hidden ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          const parent = target.parentElement;
+          if (parent) {
+            parent.innerHTML = `<div class="bg-gradient-to-br from-forest-700 to-forest-900 w-full h-full flex items-center justify-center rounded-full"><span class="text-white text-2xl font-bold">${getInitials(name)}</span></div>`;
+          }
+        }}
+      />
+    </div>
+  )
+}
 
 export default function CustomizationRequestPage() {
   return (
@@ -86,9 +120,12 @@ export default function CustomizationRequestPage() {
             <div className="relative">
               <div className="bg-forest-700 rounded-2xl p-1 shadow-2xl">
                 <div className="bg-forest-800 rounded-xl p-6 text-center min-w-[280px]">
-                  <div className="w-28 h-28 bg-gold-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                    <User className="w-12 h-12 text-gold-600" />
-                  </div>
+                  <TeamImage
+                    src={TEAM_MEMBERS[0].image}
+                    alt={TEAM_MEMBERS[0].name}
+                    name={TEAM_MEMBERS[0].name}
+                    className="w-28 h-28 mx-auto mb-4"
+                  />
                   <h3 className="text-xl font-bold text-white">Eng. Paul Methu</h3>
                   <p className="text-gold-400 text-sm mb-3">Founder & Technical Director</p>
                   <div className="flex flex-wrap gap-2 justify-center mb-4">
@@ -170,7 +207,7 @@ export default function CustomizationRequestPage() {
           </div>
         </div>
 
-        {/* Team Section - Support Team (No distraction links) */}
+        {/* Team Section - Support Team */}
         <div id="team" className="mb-16">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-forest-900 mb-2">Meet Your Support Team</h2>
@@ -181,9 +218,12 @@ export default function CustomizationRequestPage() {
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {TEAM_MEMBERS.slice(1).map((member) => (
               <div key={member.name} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex gap-4">
-                <div className="w-16 h-16 bg-forest-100 rounded-full flex items-center justify-center shrink-0">
-                  <User className="w-8 h-8 text-forest-500" />
-                </div>
+                <TeamImage
+                  src={member.image}
+                  alt={member.name}
+                  name={member.name}
+                  className="w-16 h-16 shrink-0"
+                />
                 <div>
                   <h3 className="font-bold text-forest-900">{member.name}</h3>
                   <p className="text-gold-600 text-sm font-medium">{member.role}</p>

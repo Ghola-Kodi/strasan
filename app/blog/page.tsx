@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Clock, User } from 'lucide-react'
 import { BLOG_POSTS } from '@/lib/data'
 
@@ -24,8 +25,14 @@ export default function BlogPage() {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <p className="text-gold-500 font-semibold uppercase tracking-wider text-sm mb-6">Featured Article</p>
         <Link href={`/blog/${featured.slug}`} className="card p-10 block group md:grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-forest-700 to-forest-900 rounded-2xl min-h-[200px] flex items-center justify-center mb-6 md:mb-0">
-            <span className="text-white text-6xl font-bold opacity-20">{featured.category.slice(0,2).toUpperCase()}</span>
+          {/* Featured Image */}
+          <div className="relative h-64 md:h-auto rounded-2xl overflow-hidden bg-forest-100 mb-6 md:mb-0">
+            <Image
+              src={featured.image}
+              alt={featured.title}
+              fill
+              className="object-cover group-hover:scale-105 transition duration-500"
+            />
           </div>
           <div className="flex flex-col justify-center">
             <span className="inline-block bg-forest-100 text-forest-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 w-fit">{featured.category}</span>
@@ -42,8 +49,14 @@ export default function BlogPage() {
         <div className="grid md:grid-cols-3 gap-6">
           {rest.map(post => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="card p-6 block group flex flex-col">
-              <div className="bg-gradient-to-br from-forest-100 to-forest-200 rounded-xl h-32 flex items-center justify-center mb-5">
-                <span className="text-forest-500 text-4xl font-bold opacity-30">{post.category.slice(0,2).toUpperCase()}</span>
+              {/* Blog Card Image */}
+              <div className="relative h-40 rounded-xl overflow-hidden bg-forest-100 mb-5">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition duration-500"
+                />
               </div>
               <span className="inline-block bg-forest-50 border border-forest-200 text-forest-700 text-xs font-semibold px-3 py-1 rounded-full mb-3 w-fit">{post.category}</span>
               <h3 className="font-bold text-forest-900 mb-3 group-hover:text-gold-700 transition-colors leading-snug flex-1">{post.title}</h3>

@@ -30,7 +30,7 @@ const TEAM_MEMBERS = [
     role: "Founder & Managing Director",
     qualifications: "Ph.D. Civil Engineering | MSc Transportation | EBK Consulting Engineer",
     expertise: ["Transportation Engineering", "Highway Materials", "Pavement Design", "Geotechnical Engineering"],
-    image: "/images/team/paul-macharia.jpg",
+    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/paul-macharia.jpg",
     bio: "Eng. Dr. Paul Macharia holds a Ph.D. in Civil Engineering and brings deep academic and practical expertise to complex infrastructure projects.",
     technicalCapabilities: [],
   },

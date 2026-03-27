@@ -35,8 +35,8 @@ const TEAM_MEMBERS = [
     technicalCapabilities: [],
   },
   {
-    name: "Grace Njeri, MRICS",
-    role: "Quantity Surveyor & Cost Manager",
+    name: "Eng. Slyvia Njane",
+    role: "FIDIC Contracts & Cost Manager",
     qualifications: "BSc Quantity Surveying | MRICS | Certified Cost Professional",
     expertise: ["Cost Planning", "Bills of Quantities", "FIDIC/NEC Contracts", "Contract Administration"],
     image: "/images/team/grace-njeri.jpg",

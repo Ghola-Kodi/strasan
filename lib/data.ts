@@ -75,10 +75,10 @@ export const TEAM = [
   },
   {
     id: "grace-njeri",
-    name: "Grace Njeri",
-    role: "Quantity Surveyor & Cost Manager",
+    name: "Sylvia Njane",
+    role: "BTech in Civil and Structural Engineering",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    bio: "BSc Quantity Surveying (KCA University), MRICS. Expert in construction cost planning, bill of quantities and contract administration under NEC and FIDIC forms.",
+    bio: "BTech in Civil and Structural Engineering. Expert in construction cost planning, bill of quantities and contract administration under NEC and FIDIC forms.",
     expertise: ["Cost Planning", "Bills of Quantities", "FIDIC/NEC Contracts"],
     linkedin: "#",
     isFounder: false,

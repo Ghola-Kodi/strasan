@@ -57,7 +57,7 @@ export const TEAM = [
     id: "huldah-omao",
     name: "Eng. Huldah Omao",
     role: "Graduate Engineer",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/hulda-omao.jfif",
     bio: "Eng. Huldah Omao is a graduate engineer focusing on structural analysis and design optimization, supporting project teams in developing detailed designs and engineering reports for civil infrastructure works.",
     expertise: ["Structural Analysis", "Design Optimization", "Engineering Reporting"],
     linkedin: "#",
@@ -106,7 +106,7 @@ export const BLOG_POSTS = [
     author: "Eng. Huldah Omao",
     category: "Roads & Highways",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1431540016311-9e5d1f5ff5b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+    image: "https://raw.githubusercontent.com/Ghola-Kodi/strasan/main/public/images/team/hulda-omao.jfif",
     icon: "Route",
     excerpt: "Cost-effective asphalt rehabilitation techniques explored through Kilifi and Machakos case studies, with practical guidance for county engineers.",
     content: `County road networks across Kenya carry the bulk of agricultural and community traffic yet receive a fraction of national road funding. This article examines two successful rehabilitation projects in Kilifi and Machakos counties that delivered durable surfaces at significantly below-benchmark costs.\n\n## Kilifi County Case Study\n\nThe 14 km Mariakani–Kayafungo road was rehabilitated using in-place cold recycling, reusing 85% of the existing asphalt material. This approach reduced haulage costs by 60% compared to full reconstruction and cut the carbon footprint of the project substantially.\n\n## Machakos County Case Study\n\nA micro-surfacing treatment was applied to 22 km of the Kathiani network, extending pavement life by an estimated 8–10 years at a cost of KSh 3.2M/km versus KSh 18M/km for full reconstruction.\n\n## Key Takeaways\n\n**Condition assessment is critical**: A thorough deflection survey (Benkelman beam or FWD) before selecting treatment avoids over-designing and wasting limited budgets.\n\n**Local materials**: Using locally sourced aggregates and bitumen emulsion reduces costs and supports county supply chains.\n\n**Maintenance window**: Treatments applied at the right point in the pavement deterioration curve deliver 3–5× better value than emergency reconstruction.`,
@@ -432,20 +432,7 @@ export const PROJECTS = [
     image: "https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     featured: false
   },
-  {
-    id: "kcb-tower",
-    slug: "kcb-tower-annex",
-    title: "KCB Tower Annex",
-    category: "High-Rise Structures",
-    location: "Nairobi CBD, Kenya",
-    value: "KSh 3.2B",
-    year: "2024",
-    client: "Kenya Commercial Bank",
-    description: "Structural design and construction supervision of a 28-storey office annex, incorporating seismic-resistant design and BIM modeling.",
-    services: ["Structural Analysis", "Seismic Design", "BIM Coordination", "Quality Assurance"],
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    featured: false
-  },
+ 
   {
     id: "mombasa-drainage",
     slug: "mombasa-stormwater-retrofit",
@@ -474,20 +461,7 @@ export const PROJECTS = [
     image: "https://images.unsplash.com/photo-1431540016311-9e5d1f5ff5b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     featured: false
   },
-  {
-    id: "nairobi-water",
-    slug: "nairobi-water-treatment-plant",
-    title: "Nairobi Water Treatment Plant",
-    category: "Water & Sanitation",
-    location: "Nairobi, Kenya",
-    value: "KSh 1.5B",
-    year: "2023",
-    client: "Athena Springs Ltd",
-    description: "Design and construction supervision of a 50,000m³/day water treatment facility serving peri-urban Nairobi communities.",
-    services: ["Process Design", "Environmental Impact Assessment", "Construction Supervision", "Commissioning"],
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    featured: false
-  }
+
 ];
 
 // ── Price data ────────────────────────────────────────────────────────────────

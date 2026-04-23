@@ -75,7 +75,7 @@ export const TEAM = [
   },
   {
     id: "grace-njeri",
-    name: "Sylvia Njane",
+    name: "Sylvia Njane1",
     role: "BTech in Civil and Structural Engineering",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     bio: "BTech in Civil and Structural Engineering. Expert in construction cost planning, bill of quantities and contract administration under NEC and FIDIC forms.",

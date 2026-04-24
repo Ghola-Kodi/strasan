@@ -4,7 +4,7 @@ export const COMPANY = {
   description:
     "A premier civil engineering consultancy delivering world-class infrastructure solutions across Kenya and the wider East African region.",
   email: "info@strasangroup.com",
-  phone: "+254 700 000 000",
+  phone: "+254 711 474 464",
   address: "Mugumo, along Kirigiti-Kamiti Road\nNext to Rubis Petrol Station\nKiambu County\nP.O. Box 9618-0200\nNairobi, Kenya",
   founded: 2010,
 };

@@ -187,7 +187,7 @@ export const SHOP_PRODUCTS = {
     image: "/images/projects/mangu_gardens_project_show_case.png",
   },
   worksheets: [
-    { id: "rc-beam",       title: "RC beam design",             desc: "To KS 1992, with auto graphs and rebar schedules.",   price: "KSh 6,490", image: "/images/shop/beam_design.jfif" },
+    { id: "rc-beam",       title: "RC beam design",             desc: "To KS 1992, with auto graphs and rebar schedules.",   price: "KSh 6,490", image: "/images/shop/Excel sheet.Jpg" },
     { id: "method-stmt",   title: "Method statement template",  desc: "Comprehensive Word doc for construction activities.", price: "KSh 2990",   image: "/images/shop/column design.jpg" },
     { id: "column-design", title: "Column design spreadsheet",  desc: "Biaxial bending, interaction diagrams.",              price: "KSh 1,890", image: "/images/shop/biaxial.png" },
     { id: "boq-template",  title: "BoQ template (Excel)",       desc: "Automated bill of quantities with summaries.",        price: "KSh 2,200", image: "/images/shop/boq.png" },

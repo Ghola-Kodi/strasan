@@ -208,7 +208,7 @@ export const SEMINARS = [
     title: "Steel Design",              
     desc: "Online · 16–18 June 2025 (3 half-days)",       
     badge: "early bird KSh 12,500", 
-    image: "/images/shop/steel_design_workshop.jpg",
+    image: "/images/shop/BIM workshop.png",
     date: "2025-06-16",
     duration: "3 half-days",
     format: "Online",

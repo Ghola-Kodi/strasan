@@ -77,7 +77,7 @@ export default function QuotePage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-forest-900 mb-1">Phone</h3>
-                  <p className="text-forest-600">+254 700 000 000</p>
+                  <p className="text-forest-600">+254 711 464 474</p>
                   <p className="text-sm text-forest-500">Mon-Fri, 8AM-6PM EAT</p>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function QuotePage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-forest-900 mb-1">Email</h3>
-                  <p className="text-forest-600">info@strasangroup.co.ke</p>
+                  <p className="text-forest-600">info@strasangroup.com</p>
                   <p className="text-sm text-forest-500">We'll respond within 24 hours</p>
                 </div>
               </div>
